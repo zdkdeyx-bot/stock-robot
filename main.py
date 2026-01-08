@@ -6,8 +6,8 @@ from datetime import datetime
 # ====== 1. 设置你的股票池 ======
 # 格式：美股直接写代码，A股加后缀 (.SS上海, .SZ深圳)，港股 (.HK)
 # 可以在这里随时修改
-MY_WATCHLIST = ['NVDA', 'TSLA', 'AAPL', 'MSFT', '600519.SS', '000001.SZ'] 
-MY_PORTFOLIO = ['COIN', 'GOOGL']  # 你的持仓，用于检测卖点
+MY_WATCHLIST = ['UAMY', 'OMEX', 'CRML', 'NVA', 'XPEV', 'NB', 'GOOG', 'NVDA', 'LBTR',  'BLNK'] 
+MY_PORTFOLIO = ['UAMY', 'OMEX', 'CRML', 'NVA', 'NB', 'BLNK']  # 你的持仓，用于检测卖点
 
 def check_stock(ticker):
     try:
