@@ -1,0 +1,29 @@
+name: 每日股票扫描
+
+on:
+  schedule:
+    # 这里设置运行时间 (UTC时间)。
+    # 比如 UTC 21:00 是北京时间凌晨 05:00 (美股收盘后)
+    # 每天运行一次
+    - cron: '0 21 * * *'
+  workflow_dispatch: # 允许你手动点击按钮运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Scan
+        run: |
+          python main.py
